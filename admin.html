@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>管理單字</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="admin">
+    <header class="app-header">
+      <h1>管理單字</h1>
+      <a class="manage-link" href="index.html">回到背單字</a>
+    </header>
+
+    <section class="form-area">
+      <label>Apps Script Web App URL（請部署後填入）
+        <input id="appsUrl" placeholder="https://script.google.com/...." />
+      </label>
+
+      <form id="wordForm">
+        <label>英文單字
+          <input name="word" required />
+        </label>
+        <label>中文翻譯
+          <input name="translation" />
+        </label>
+        <label>詞性
+          <input name="pos" />
+        </label>
+        <label>例句
+          <textarea name="example"></textarea>
+        </label>
+        <label>字根分析
+          <textarea name="root"></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="button" id="autoFill">自動填入</button>
+          <button type="submit" id="saveWord">儲存單字</button>
+        </div>
+      </form>
+
+      <div id="status" class="status"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

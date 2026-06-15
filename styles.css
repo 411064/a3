@@ -1,0 +1,43 @@
+:root{
+  --bg:#0b0f13;
+  --card:#0f1720;
+  --muted:#9aa4af;
+  --accent:#7c5cff;
+  --glass: rgba(255,255,255,0.04);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+body{background:linear-gradient(180deg,#050608 0%, #0b0f13 100%);color:#e6eef8}
+
+.app{max-width:900px;margin:3rem auto;padding:1rem}
+.app-header{display:flex;justify-content:space-between;align-items:center}
+.app-header h1{margin:0;font-weight:600}
+.manage-link{color:var(--muted);text-decoration:none;font-size:0.95rem}
+
+.card-area{display:flex;justify-content:center;align-items:center;height:60vh}
+.quick-add{display:flex;gap:.5rem;justify-content:center;margin-top:1rem}
+.quick-add input{padding:.5rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#e6eef8;width:220px}
+.quick-add button{padding:.5rem 0.8rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:linear-gradient(180deg,var(--glass),transparent);color:var(--muted)}
+.card{width:360px;height:220px;perspective:1200px}
+.card .side{width:100%;height:100%;border-radius:12px;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;position:absolute;top:0;left:0;padding:1.5rem;box-shadow:0 10px 30px rgba(0,0,0,0.6);}
+.card .front{background:linear-gradient(135deg, rgba(124,92,255,0.12), rgba(124,92,255,0.06)),var(--card);font-size:2.5rem;font-weight:700}
+.card .back{transform:rotateY(180deg);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)),linear-gradient(90deg, rgba(124,92,255,0.06), rgba(124,92,255,0.02));font-size:0.95rem;text-align:left}
+.card.flipped{transform:none}
+.card-inner{transition:transform .6s;transform-style:preserve-3d}
+
+.card{position:relative}
+.cardInner{transition:transform .6s;transform-style:preserve-3d}
+.card.flipped .side.front{transform:rotateY(180deg)}
+.card.flipped .side.back{transform:rotateY(360deg)}
+
+.controls{display:flex;gap:.5rem;justify-content:center}
+.controls button{background:linear-gradient(180deg,var(--glass),transparent);border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:.6rem 1rem;border-radius:8px;cursor:pointer}
+
+.admin{max-width:900px;margin:2rem auto;padding:1rem}
+.form-area{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+label{display:block;margin:0.6rem 0;color:var(--muted)}
+input,textarea{width:100%;padding:.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:#e6eef8}
+.form-actions{display:flex;gap:.5rem;margin-top:.6rem}
+.status{margin-top:.6rem;color:var(--accent)}
+
+@media (max-width:600px){.card{width:92%;height:200px}}

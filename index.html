@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>背單字 - Flashcards</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>背單字</h1>
+      <a class="manage-link" href="admin.html">管理單字</a>
+    </header>
+
+    <section class="quick-add">
+      <input id="quickWord" placeholder="輸入英文單字並按 Enter 加入" />
+      <button id="addQuick">加入並自動填入</button>
+    </section>
+
+    <section class="card-area">
+      <div id="card" class="card">
+        <div class="side front" id="card-front">Loading...</div>
+        <div class="side back" id="card-back"></div>
+      </div>
+    </section>
+
+    <nav class="controls">
+      <button id="prev">上一個</button>
+      <button id="flip">翻頁</button>
+      <button id="next">下一個</button>
+    </nav>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
